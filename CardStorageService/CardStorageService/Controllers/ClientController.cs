@@ -2,6 +2,7 @@
 using CardStorageService.Models.Requests;
 using CardStorageService.Services;
 using CardStorageService.Services.Impl;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -9,6 +10,7 @@ using System;
 
 namespace CardStorageService.Controllers
 {
+    [Authorize]
     [Route("api/client")]
     [ApiController]
     public class ClientController : ControllerBase
@@ -19,7 +21,6 @@ namespace CardStorageService.Controllers
         private readonly ILogger<CardController> _logger;
 
         #endregion
-
 
         #region Constructors
 
@@ -64,7 +65,6 @@ namespace CardStorageService.Controllers
         }
 
         #endregion
-
 
     }
 }
